@@ -3,13 +3,14 @@ from mock import patch, ANY, Mock
 import os
 import unittest
 import shutil
+import tempfile
 from helpers import AnyStringWith
 from geeknote.gnsync import remove_control_characters, GNSync
 
 
 class testGnsync(unittest.TestCase):
     def setUp(self):
-        self.test_dir = '/tmp/test_gnsync'
+        self.test_dir = tempfile.mkdtemp(prefix='test_gnsync_')
         if not os.path.exists(self.test_dir):
             os.makedirs(self.test_dir)
 

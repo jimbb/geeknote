@@ -379,7 +379,7 @@ class GNSync:
         """
         GeekNote(sleepOnRateLimit=self.sleep_on_ratelimit).loadNoteContent(note)
 
-        escaped_title = re.sub(os.sep, "-", note.title)
+        escaped_title = note.title.replace(os.sep, "-")
 
         # Save images
         if "saveImages" in self.imageOptions and self.imageOptions["saveImages"]:

@@ -31,7 +31,7 @@ _Line 2_
 
     def test_ENMLToText(self):
         wrapped = Editor.wrapENML(self.HTML_TEXT)
-        self.assertEqual(Editor.ENMLtoText(wrapped), self.MD_TEXT)
+        self.assertEqual(Editor.ENMLtoText(wrapped).replace('\r\n', '\n'), self.MD_TEXT)
 
     def test_TODO(self):
         MD_TODO = "\n* [ ]item 1\n\n* [x]item 2\n\n* [ ]item 3\n\n"
@@ -41,7 +41,7 @@ _Line 2_
 
         wrapped = Editor.wrapENML(HTML_TODO)
         text = Editor.ENMLtoText(wrapped)
-        self.assertEqual(text, MD_TODO)
+        self.assertEqual(text.replace('\r\n', '\n'), MD_TODO)
 
     def test_htmlEscape(self):
         wrapped = Editor.textToENML(content="<what ever>", format="markdown")

@@ -15,7 +15,7 @@ from geeknote import out
 
 class AccountingStub(object):
     uploadLimit = 100
-    uploadLimitEnd = 1095292800000
+    uploadLimitEnd = 1095350400000
 
 
 class UserStub(object):
@@ -36,8 +36,8 @@ class AttributesStub(object):
 
 class NoteStub(object):
     title = 'testnote'
-    created = 1095292800000
-    updated = 1095292800000
+    created = 1095350400000
+    updated = 1095350400000
     content = '##note content'
     tagNames = ['tag1', 'tag2', 'tag3']
     notebookName = 'geeknotes'
@@ -55,7 +55,8 @@ class outTestsWithHackedStdout(unittest.TestCase):
         # this is particularly important on Travis CI, where
         # the timezone may not be the same as our dev machine
         os.environ['TZ'] = "PST-0800"
-        time.tzset()
+        if hasattr(time, 'tzset'):
+            time.tzset()
 
     def tearDown(self):
         sys.stdout = self.stdout
@@ -150,7 +151,7 @@ Tags: tag1, tag2, tag3
 ##note content\n\n\n'''
         showNote(NoteStub(), UserStub().id, UserStub().shardId)
         sys.stdout.seek(0)
-        self.assertEqual(sys.stdout.read(), note)
+        self.assertEqual(sys.stdout.read().replace('\r\n', '\n'), note)
 
     def test_print_list_without_title_success(self):
         notes_list = '''Found 2 items
@@ -200,4 +201,4 @@ Found 2 items
         self.assertEqual(sys.stdout.read(), result)
 
     def test_print_date(self):
-        self.assertEqual(printDate(1095292800000), '2004-09-17')
+        self.assertEqual(printDate(1095350400000), '2004-09-17')

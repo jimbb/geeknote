@@ -12,12 +12,12 @@ import traceback
 import thrift.protocol.TBinaryProtocol as TBinaryProtocol
 import thrift.transport.THttpClient as THttpClient
 
-import evernote3.edam.userstore.constants as UserStoreConstants
-import evernote3.edam.notestore.NoteStore as NoteStore
-from evernote3.edam.notestore.ttypes import NotesMetadataResultSpec
-import evernote3.edam.type.ttypes as Types
-from evernote3.edam.limits.constants import EDAM_USER_NOTES_MAX
-from evernote3.edam.error.ttypes import EDAMNotFoundException
+import evernote.edam.userstore.constants as UserStoreConstants
+import evernote.edam.notestore.NoteStore as NoteStore
+from evernote.edam.notestore.ttypes import NotesMetadataResultSpec
+import evernote.edam.type.ttypes as Types
+from evernote.edam.limits.constants import EDAM_USER_NOTES_MAX
+from evernote.edam.error.ttypes import EDAMNotFoundException
 
 from .__init__ import __version__
 from . import config
