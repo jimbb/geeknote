@@ -12,8 +12,14 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          name: Test import
-          command: python -c "import geeknote; print('Import successful')"
+          name: Install test dependencies
+          command: pip install pytest pytest-cov
+      - run:
+          name: Run tests with coverage
+          command: pytest --cov=geeknote --cov-report=xml
+      - run:
+          name: Upload coverage to Codecov
+          command: bash <(curl -s https://codecov.io/bash) -t c267916c-f35b-4fb2-b27d-aae28242e43e
 
 workflows:
   test-workflow:
