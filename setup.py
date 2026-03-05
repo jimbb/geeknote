@@ -67,12 +67,12 @@ setup(
     name="geeknote",
     version=__version__,
     license="GPL",
-    author="Jeff Kowalski",
+    author="jimbb",
     # author_email='',
-    description="Geeknote - is a command line client for Evernote, "
+    description="Geeknote - Python 3.12 compatible command line client for Evernote, "
     "that can be used on Linux, FreeBSD and OS X.",
     long_description=read("README.md"),
-    url="http://github.com/jeffkowalski/geeknote",
+    url="http://github.com/jimbb/geeknote",
     packages=["geeknote"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -81,7 +81,12 @@ setup(
         "Environment :: Console",
         "Natural Language :: English",
         "Operating System :: OS Independent",
-        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Topic :: Utilities",
     ],
     install_requires=[

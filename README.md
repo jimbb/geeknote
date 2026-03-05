@@ -1,11 +1,19 @@
-Archived
+Python 3.12 Compatible Fork
 ===
-I no longer maintain this repository.  If you've come here looking for bug fixes, please check one of the more recently updated forks to see if they are more recently maintained.
-
+This is a Python 3.12 compatible fork of geeknote with all necessary compatibility fixes applied. This version has been tested and verified to work with Python 3.12.
 
 Important Note
 ===
-This is an updated version of geeknote for Python 3 using evernote-sdk-python3 (which is also in beta). Even though things are not throughly tested, basic functionality works.
+This fork includes comprehensive Python 3.12 compatibility updates:
+- Fixed all print statements to use print() functions
+- Updated httplib imports to http.client
+- Updated Cookie imports to http.cookies
+- Fixed urllib imports to use urllib.parse
+- Fixed dict.items() concatenation issues
+- Fixed map() iterator handling
+- Added proper exception.message handling
+
+All core functionality has been tested and works correctly with Python 3.12.
 
 Geeknote for Evernote (or 印象笔记)  [![Travis CI](https://travis-ci.org/jeffkowalski/geeknote.svg?branch=master)](https://travis-ci.org/jeffkowalski/geeknote) [![Circle CI](https://circleci.com/gh/jeffkowalski/geeknote.svg?&style=shield)](https://circleci.com/gh/jeffkowalski/geeknote)
 ===
