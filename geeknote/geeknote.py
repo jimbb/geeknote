@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 import traceback
 import time
@@ -13,12 +12,12 @@ import traceback
 import thrift.protocol.TBinaryProtocol as TBinaryProtocol
 import thrift.transport.THttpClient as THttpClient
 
-import evernote.edam.userstore.constants as UserStoreConstants
-import evernote.edam.notestore.NoteStore as NoteStore
-from evernote.edam.notestore.ttypes import NotesMetadataResultSpec
-import evernote.edam.type.ttypes as Types
-from evernote.edam.limits.constants import EDAM_USER_NOTES_MAX
-from evernote.edam.error.ttypes import EDAMNotFoundException
+import evernote2.edam.userstore.constants as UserStoreConstants
+import evernote2.edam.notestore.NoteStore as NoteStore
+from evernote2.edam.notestore.ttypes import NotesMetadataResultSpec
+import evernote2.edam.type.ttypes as Types
+from evernote2.edam.limits.constants import EDAM_USER_NOTES_MAX
+from evernote2.edam.error.ttypes import EDAMNotFoundException
 
 from .__init__ import __version__
 from . import config
@@ -187,7 +186,7 @@ class GeekNote(object):
         if GeekNote.noteStore:
             return GeekNote.noteStore
 
-        noteStoreUrl = str(self.getUserStore().getNoteStoreUrl(self.authToken),'utf-8')
+        noteStoreUrl = self.getUserStore().getNoteStoreUrl(self.authToken)
         noteStoreHttpClient = THttpClient.THttpClient(noteStoreUrl)
         noteStoreProtocol = TBinaryProtocol.TBinaryProtocol(noteStoreHttpClient)
         GeekNote.noteStore = NoteStore.Client(noteStoreProtocol)
@@ -352,7 +351,7 @@ class GeekNote(object):
     @EdamException
     def loadLinkedNoteContent(self, note):
         if not isinstance(note, object):
-            raise Excetion(
+            raise Exception(
                 "Note content must be an " "instance of Note, '%s' given." % type(note)
             )
 
@@ -360,7 +359,6 @@ class GeekNote(object):
             self.sharedAuthToken, note.guid
         )
         # TODO
-        pass
 
     @EdamException
     def createNote(
@@ -952,9 +950,7 @@ class Notes(GeekNoteConnector):
         self.findExactOnUpdate = bool(findExactOnUpdate)
         self.selectFirstOnUpdate = bool(selectFirstOnUpdate)
 
-    def _editWithEditorInThread(
-        self, inputData, note=None, raw=None, rawmd=None, sharedNote=False, fake=False
-    ):
+    def _editWithEditorInThread(self, inputData, note=None, raw=None, rawmd=None, sharedNote=False):
         editor_userprop = getEditor(self.getStorage())
         noteExt_userprop = getNoteExt(self.getStorage())[bool(raw)]
         if note:
@@ -1164,10 +1160,9 @@ class Notes(GeekNoteConnector):
         inputData = self._parseInput(
             None, None, None, None, None, None, the_note, None, None, True
         )
-        result = self._editWithEditorInThread(
-            inputData, the_note, raw=False, sharedNote=True, fake=True
+        self._editWithEditorInThread(
+            inputData, the_note, raw=False, sharedNote=True
         )
-        pass
 
     def edit(
         self,
@@ -1560,7 +1555,6 @@ class Notes(GeekNoteConnector):
                 self.getEvernote().loadNoteContent(note)
                 md5 = hashlib.md5()
                 md5.update(note.content)
-                noteHash = md5.hexdigest()
                 noteId = md5.hexdigest() + " " + note.title
                 if noteId in notes_dict:
                     notes_dict[noteId].append(note)
@@ -1798,7 +1792,7 @@ def main(args=None):
             Tags().remove(**ARGS)
 
     except (KeyboardInterrupt, SystemExit, tools.ExitException) as e:
-        exit_status_code = e.args[0]
+        exit_status_code = 1
 
     except Exception as e:
         traceback.print_exc()
