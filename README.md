@@ -19,7 +19,7 @@ Geeknote for Evernote (or 印象筆記)
 ===
 
 [![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue)](https://www.python.org/downloads/)
-[![Travis CI](https://travis-ci.com/jimbb/geeknote.svg?branch=master)](https://travis-ci.com/jimbb/geeknote)
+[![Travis CI](https://app.travis-ci.com/jimbb/geeknote.svg?branch=master)](https://app.travis-ci.com/jimbb/geeknote)
 [![CircleCI](https://circleci.com/gh/jimbb/geeknote.svg?style=shield)](https://circleci.com/gh/jimbb/geeknote)
 [![codecov](https://codecov.io/gh/jimbb/geeknote/branch/master/graph/badge.svg?token=c267916c-f35b-4fb2-b27d-aae28242e43e)](https://codecov.io/gh/jimbb/geeknote)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
