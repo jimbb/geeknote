@@ -15,8 +15,14 @@ This fork includes comprehensive Python 3.12 compatibility updates:
 
 All core functionality has been tested and works correctly with Python 3.12.
 
-Geeknote for Evernote (or 印象筆記)  [![Travis CI](https://travis-ci.org/jeffkowalski/geeknote.svg?branch=master)](https://travis-ci.org/jeffkowalski/geeknote) [![Circle CI](https://circleci.com/gh/jeffkowalski/geeknote.svg?&style=shield)](https://circleci.com/gh/jeffkowalski/geeknote)
+Geeknote for Evernote (or 印象筆記)
 ===
+
+[![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue)](https://www.python.org/downloads/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![GitHub issues](https://img.shields.io/github/issues/jimbb/geeknote)](https://github.com/jimbb/geeknote/issues)
+[![GitHub forks](https://img.shields.io/github/forks/jimbb/geeknote)](https://github.com/jimbb/geeknote/network)
+[![GitHub stars](https://img.shields.io/github/stars/jimbb/geeknote)](https://github.com/jimbb/geeknote/stargazers)
 
 Geeknote is a command line client for Evernote that can be use on Linux, FreeBSD and OS X.
 
