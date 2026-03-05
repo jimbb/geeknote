@@ -15,7 +15,7 @@ This fork includes comprehensive Python 3.12 compatibility updates:
 
 All core functionality has been tested and works correctly with Python 3.12.
 
-Geeknote for Evernote (or 印象笔记)  [![Travis CI](https://travis-ci.org/jeffkowalski/geeknote.svg?branch=master)](https://travis-ci.org/jeffkowalski/geeknote) [![Circle CI](https://circleci.com/gh/jeffkowalski/geeknote.svg?&style=shield)](https://circleci.com/gh/jeffkowalski/geeknote)
+Geeknote for Evernote (or 印象筆記)  [![Travis CI](https://travis-ci.org/jeffkowalski/geeknote.svg?branch=master)](https://travis-ci.org/jeffkowalski/geeknote) [![Circle CI](https://circleci.com/gh/jeffkowalski/geeknote.svg?&style=shield)](https://circleci.com/gh/jeffkowalski/geeknote)
 ===
 
 Geeknote is a command line client for Evernote that can be use on Linux, FreeBSD and OS X.
@@ -113,7 +113,7 @@ Afterward, you can repeat the authorization step.
 
 ##### (Yìnxiàng Bǐjì notes)
 
-If you want to use Evernote's separate service in China Yìnxiàng Bǐjì (印象笔记),
+If you want to use Evernote's separate service in China Yìnxiàng Bǐjì (印象筆記),
 you need to set the environment variable `GEEKNOTE_BASE` to `yinxiang`.
 
 ``` sh
@@ -123,7 +123,7 @@ export GEEKNOTE_BASE=yinxiang
 geeknote ...commands...
 ```
 
-Yìnxiàng Bǐjì (印象笔记) is faster in China and it supports Chinese payment methods.
+Yìnxiàng Bǐjì (印象筆記) is faster in China and it supports Chinese payment methods.
 Be aware that Yìnxiàng Bǐjì will not have support for sharing social features
 like Twitter or Facebook. Furthermore, since data are stored on servers in China,
 Chinese authorities have the right to access their data according to current
