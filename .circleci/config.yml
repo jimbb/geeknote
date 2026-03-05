@@ -1,0 +1,21 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@2.1.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/python:3.12
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:
+          name: Test import
+          command: python -c "import geeknote; print('Import successful')"
+
+workflows:
+  test-workflow:
+    jobs:
+      - test
